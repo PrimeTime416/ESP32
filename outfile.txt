@@ -100,24 +100,4 @@ hello world
 99
 100
 101
-....ets Jun  8 2016 00:22:57
-
-rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
-ets Jun  8 2016 00:22:57
-
-rst:0x10 (RTCWDT_RTC_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
-configsip: 0, SPIWP:0xee
-clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
-mode:DIO, clock div:2
-load:0x3fff0018,len:4
-load:0x3fff001c,len:5008
-ho 0 tail 12 room 4
-load:0x40078000,len:10600
-ho 0 tail 12 room 4
-load:0x40080400,len:5684
-entry 0x400806bc
-MicroPython v1.12-68-g3032ae115 on 2020-01-20; ESP32 module with ESP32
-Type "help()" for more information.
->>>[reboot detected 0]repl is in normal command mode
-[\r\x03\x03] b'\r\n>>> '
-[\r\x01] b'\r\n>>> \r\nraw REPL; CTRL-B to exit\r\n>' 
+.
