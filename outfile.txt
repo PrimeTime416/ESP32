@@ -101,3 +101,14 @@ hello world
 100
 101
 .
+
+.<class 'list'>
+Content2 = {'Upgrade': ' websocket', 'User-Agent': ' Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.106 Safari/537.36', 'Connection': ' Upgrade', 'GET / HTTP/1.1': 'GET / HTTP/1.1', 'Cache-Control': ' no-cache', 'Host': ' 192.168.1.240', 'Pragma': ' no-cache', 'Origin': ' null', 'Accept-Language': ' en-GB,en-US;q=0.9,en;q=0.8,da;q=0.7', 'Sec-WebSocket-Key': ' /K8a/Z2c8+eBpF76RVG4mA==', 'Sec-WebSocket-Extensions': ' permessage-deflate; client_max_window_bits', '': '', 'Accept-Encoding': ' gzip, deflate', 'Sec-WebSocket-Version': ' 13'}
+
+
+.Got a connection!: 
+Got a connection from ('192.168.1.208', 41046)
+<class 'list'>
+Content = {'User-Agent': ' Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.106 Safari/537.36', 'Accept': ' text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'Connection': ' keep-alive', 'Cache-Control': ' max-age=0', 'Accept-Language': ' en-GB,en-US;q=0.9,en;q=0.8,da;q=0.7', 'Accept-Encoding': ' gzip, deflate', 'Host': ' 192.168.1.240', 'GET / HTTP/1.1': 'GET / HTTP/1.1', 'Upgrade-Insecure-Requests': ' 1', '': ''}
+...<class 'list'>
+Content2 = {'': ''}
