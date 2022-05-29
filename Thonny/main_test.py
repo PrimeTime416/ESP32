@@ -21,7 +21,7 @@ rst = Pin(16, Pin.OUT)
 rst.value(1)
 oled = SSD1306_I2C(oled_width, oled_height, i2c)
 
-oled.text('Hello, World 1!', 0, 0)
+oled.text('Hello Hyacinth', 0, 0)
 oled.text('Hello, World 2!', 0, 10)
 oled.text('Hello, World 3!', 0, 20)
 oled.text('Hello Roman :)', 0, 30)
