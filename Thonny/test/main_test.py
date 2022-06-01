@@ -8,7 +8,6 @@
 
 from machine import Pin, SoftI2C
 from SSD1306 import SSD1306_I2C
-# from SSD1306 import SSD1306
 from time import sleep
 
 # HelTec Automation(TM) ESP32 Series Dev boards Pin assignment 

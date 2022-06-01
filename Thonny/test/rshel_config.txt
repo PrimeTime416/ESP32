@@ -1,0 +1,2 @@
+connect serial /dev/ttyUSB0
+repl pyboard ~ import os ~ os.listdir() ~ import main_test
