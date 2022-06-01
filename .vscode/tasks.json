@@ -1,0 +1,39 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "rshell",
+            "type": "shell",
+            "command": "rshell",
+            "args": [
+                {
+                    "value": "-f",
+                    "quoting": "escape"
+                },
+                {
+                    "value": "${workspaceFolder}/${relativeFileDirname}/rshel_config.txt",
+                    "quoting": "escape"
+                }
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/${relativeFileDirname}"
+              },
+
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+
+            // "dependsOn":"rshell_cd",
+            // "dependsOrder": "sequence",
+        },
+        // {
+        //     "label": "rshell_cd",
+        //     "type": "shell",
+        //     "command":"cd ${relativeFileDirname}",
+        // },
+        
+    ]
+}
