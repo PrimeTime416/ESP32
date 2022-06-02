@@ -2,7 +2,6 @@
 #Pico Invaders!
 #
 # TODO : Implement alien shots, Shields, Sound
-# from machine import Pin, I2C, ADC, PWM, SoftI2C
 from machine import Pin, ADC, PWM, SoftI2C
 from SSD1306 import SSD1306_I2C
 from time import sleep
@@ -12,12 +11,6 @@ import random
 WIDTH  = 128                                            # oled display width
 HEIGHT = 64                                             # oled display height
 
-# Pot = ADC(26)
-# conversion_factor = 3.3 / (65535) # Conversion from Pin read to proper voltage
-
-# speaker = PWM(Pin(18))
-
-# i2c = I2C(0)                                            # Init I2C using I2C0 defaults, SCL=Pin(GP9), SDA=Pin(GP8), freq=400000
 
 rst = Pin(16, Pin.OUT)
 rst.value(1)
@@ -68,40 +61,6 @@ num7 = bytearray(b"\x00@\xe0@\xfc@\x1f@\x03\xc0\x00\xc0")
 num8 = bytearray(b"{\x80\xff\xc0\x84@\x84@\xff\xc0{\x80")
 num9 = bytearray(b"G\x80\xcf\xc0\x88@\x88@\xff\xc0\x7f\x80")
 
-aliens = []
-class Alien(object):
-    
-    def __init__(self, type, x, y):
-        self.visible = True
-        self.type = type
-        self.x = x
-        self.y = y
-        self.origx = x
-        self.origy = y
-    
-def create_alien(type, x, y):
-    alien = Alien(type, x, y)
-    return alien
-
-def define_aliens():
-    type = "inv1a" #First row is type 1. 
-    for x in range (1, aliencountx + 1):
-        for y in range (1, aliencounty + 1):
-            aliens.append(create_alien(type, (120 - ((x * (spritex + alienspacingx)) - spritex)), (y * (spritey + alienspacingy)) - spritey))
-        if type == "inv1a":
-            type = "inv2a" #Second row is type 2
-        else:
-            type = "inv1a"
-
-def reset_aliens(visibility): # Used to reset aliens to starting position and, optionally, visibility
-    x = 1
-    y = 1
-    for c in aliens:
-        if visibility:
-            c.visible = True
-            
-        c.x = c.origx
-        c.y = c.origy
             
 # Load images into framebuffer
 inv1aBuff = framebuf.FrameBuffer(inv1a, 7, 7, framebuf.MONO_HLSB)
@@ -131,7 +90,8 @@ shipBuff = framebuf.FrameBuffer(ship, 8, 12, framebuf.MONO_HLSB)
 
 # Clear the oled display in case it has junk on it.
 oled.fill(0)
-oled.blit(logoBuff, 0, 0)
+# oled.blit(logoBuff, 0, 0)
+oled.blit(numbers['0'], 0, 0)
 # Finally update the oled display so the image & text is displayed
 oled.show()
 
