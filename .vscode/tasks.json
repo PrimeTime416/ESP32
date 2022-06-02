@@ -4,7 +4,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "rshell",
+            "label": "$rshell",
             "type": "shell",
             "command": "rshell",
             "args": [
@@ -18,7 +18,11 @@
                 }
             ],
             "options": {
-                "cwd": "${workspaceFolder}/${relativeFileDirname}"
+                "cwd": "${workspaceFolder}/${relativeFileDirname}",
+                "statusbar": {
+                    "label": "$(briefcase) rshell Run",
+                    // "color" : "#9ab90e",
+                }
               },
 
             "group": {
