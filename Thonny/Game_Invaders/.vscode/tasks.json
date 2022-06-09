@@ -1,0 +1,65 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "mpRemote: HELP",
+            "type": "shell",
+            "command": "mpremote help",
+            "isBackground": true,
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false,
+                "close": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "mpRemote: REPL1",
+            "type": "shell",
+            "command": "mpremote repl eval 'print(dir()\r\n'",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "problemMatcher": [],
+        },
+        {
+            "label": "mpRemote: REPL2",
+            "type": "shell",
+            "command": "mpremote repl repl2",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "problemMatcher": [],
+        },
+        {
+            "label": "mpRemote: WL_SCAN",
+            "type": "shell",
+            "command": "mpremote repl wl_scan",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "problemMatcher": [],
+        }
+    ]
+}
