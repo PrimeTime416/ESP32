@@ -1,4 +1,0 @@
-connect serial /dev/ttyUSB0
-cp main_ivaders.py /pyboard/main_ivaders.py
-
-repl pyboard ~ import os ~ os.listdir() ~ import main_ivaders ~ print(\"LOADED\")
