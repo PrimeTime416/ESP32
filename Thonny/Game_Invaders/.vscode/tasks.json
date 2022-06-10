@@ -20,9 +20,34 @@
             "problemMatcher": []
         },
         {
+        "linux":{
+            "options": {"shell": {"executable": "/home/primetime/.local/bin/mpremote",
+            }}},
             "label": "mpRemote: REPL1",
             "type": "shell",
-            "command": "mpremote repl eval 'print(dir()\r\n'",
+            "command": "repl3",
+            "args": [{
+                "value": "",
+                "quoting": "escape"
+            }],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated",
+                "showReuseMessage": false,
+                "clear": false,
+            },
+             "isBackground": true,
+        },
+        {
+            "label": "mpRemote: REPL2",
+            "type": "shell",
+            "command": "mpremote repl2",
+            "args": [{
+                "value": "",
+                "quoting": "escape"
+            }],
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -34,9 +59,13 @@
             "problemMatcher": [],
         },
         {
-            "label": "mpRemote: REPL2",
+            "label": "mpRemote: REPL4",
             "type": "shell",
-            "command": "mpremote repl repl2",
+            "command": "mpremote",
+            "args": [{
+                "value": "${input:INPUT_Commands}",
+                "quoting": "escape"
+            }],
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -61,5 +90,18 @@
             },
             "problemMatcher": [],
         }
-    ]
+    ],
+    "inputs": [{
+        "id": "INPUT_Commands",
+        "description": "REPL: init",
+        "type": "pickString",
+        "options": [{
+            "label": "dir()",
+            "value": "repl3"
+        },
+        {
+            "label": "Loaded Module",
+            "value": "repl4"
+        }]
+    }]
 }
