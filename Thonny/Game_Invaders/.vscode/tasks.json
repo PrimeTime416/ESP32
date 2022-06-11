@@ -77,6 +77,24 @@
             "problemMatcher": [],
         },
         {
+            "label": "mpRemote: Copy",
+            "type": "shell",
+            "command": "mpremote",
+            "args": [{
+                "value": "${input:INPUT_Copy}",
+                "quoting": "escape"
+            }],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "problemMatcher": [],
+        },
+        {
             "label": "mpRemote: WL_SCAN",
             "type": "shell",
             "command": "mpremote repl wl_scan",
@@ -103,5 +121,20 @@
             "label": "Modules",
             "value": "repl4"
         }]
-    }]
+    },
+    {
+        "id": "INPUT_Copy",
+        "description": "Copy from and too device",
+        "type": "pickString",
+        "options": [{
+            "label": "Copy TOO Device",
+            "value": "cpToo"
+        },
+        {
+            "label": "Cop FROM device",
+            "value": "cpFrom"
+        }
+        ]
+    }
+]
 }

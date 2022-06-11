@@ -1,0 +1,27 @@
+commands = {
+
+#    "test": ["mount", ".", "exec", "import test"],
+
+"repl1 x=4": "eval x*2",
+
+"repl2": ["exec", """
+print(dir())""",
+],
+
+"repl3": ["exec", """
+print(dir())""", "repl"
+],
+
+"repl4": ["ls","exec", """
+print(help("modules"))""", "repl"
+],
+
+"cpToo": ["ls"
+],
+
+"cpFrom": "cp test.py : "["ls"]
+
+
+
+
+}
