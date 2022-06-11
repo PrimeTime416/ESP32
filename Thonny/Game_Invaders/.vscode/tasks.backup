@@ -2,15 +2,27 @@
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
     "version": "2.0.0",
-
-// TASK SECTION
     "tasks": [
+        {
+            "label": "mpRemote: HELP",
+            "type": "shell",
+            "command": "mpremote help",
+            "isBackground": true,
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false,
+                "close": false
+            },
+            "problemMatcher": []
+        },
         {
         "linux":{
             "options": {"shell": {"executable": "/home/primetime/.local/bin/mpremote",
-            },
-            },
-        },
+            }}},
             "label": "mpRemote: REPL1",
             "type": "shell",
             "command": "repl3",
@@ -26,9 +38,8 @@
                 "showReuseMessage": false,
                 "clear": false,
             },
-            "isBackground": true,
+             "isBackground": true,
         },
-
         {
             "label": "mpRemote: REPL2",
             "type": "shell",
@@ -47,7 +58,6 @@
             },
             "problemMatcher": [],
         },
-
         {
             "label": "mpRemote: REPL4",
             "type": "shell",
@@ -66,7 +76,6 @@
             },
             "problemMatcher": [],
         },
-
         {
             "label": "mpRemote: Copy",
             "type": "shell",
@@ -85,7 +94,6 @@
             },
             "problemMatcher": [],
         },
-
         {
             "label": "mpRemote: WL_SCAN",
             "type": "shell",
@@ -100,7 +108,6 @@
             },
             "problemMatcher": [],
         },
-
         {
             "label": "mpRemote: FS",
             "type": "shell",
@@ -110,12 +117,9 @@
                 // "value": "fs ls",
                 // "quoting": "escape" 
             // }]
-        },
-    
-// INPUT SECTION        
+        }
     ],
-    "inputs": [
-    {
+    "inputs": [{
         "id": "INPUT_Commands",
         "description": "REPL: init",
         "type": "pickString",
@@ -128,7 +132,6 @@
             "value": "repl4"
         }]
     },
-
     {
         "id": "INPUT_Copy",
         "description": "Copy from and too device",
@@ -143,17 +146,14 @@
         }
         ]
     },
-
     {
         "id": "INPUT_Fs",
-        "description": "File System Tasks",
-        "type": "pickString",
-        "options": [
-            {
+         "description": "File System Tasks",
+         "type": "pickString",
+         "options": [{
             "label": "uFs",
-            "value": "fs ls",
-            },
-        ]
+             "value": "fs ls",
+         }]
     }
-    ]
+]
 }
