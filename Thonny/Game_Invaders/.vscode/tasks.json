@@ -32,14 +32,30 @@
             },
         },
 
+
+        // {
+        //     "label": "mpRemote: Copy",
+        //     "type": "shell",
+        //     "command": "mpremote",
+        //     "args": [{
+        //         "value": "${input:INPUT_Copy}",
+        //         "quoting": "escape"
+        //     }],
+        //     "presentation": {
+        //         "echo": true,
+        //         "reveal": "always",
+        //         "focus": true,
+        //         "panel": "shared",
+        //         "showReuseMessage": false,
+        //         "clear": false
+        //     },
+        //     "problemMatcher": [],
+        // },
+
         {
-            "label": "mpRemote: REPL2",
+            "label": "mpRemote: ls",
             "type": "shell",
-            "command": "mpremote repl2",
-            "args": [{
-                "value": "",
-                "quoting": "escape"
-            }],
+            "command": "ls",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -51,58 +67,6 @@
             "problemMatcher": [],
         },
 
-        {
-            "label": "mpRemote: REPL4",
-            "type": "shell",
-            "command": "mpremote",
-            "args": [{
-                "value": "${input:INPUT_Commands}",
-                "quoting": "escape"
-            }],
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": true,
-                "panel": "shared",
-                "showReuseMessage": false,
-                "clear": false
-            },
-            "problemMatcher": [],
-        },
-
-        {
-            "label": "mpRemote: Copy",
-            "type": "shell",
-            "command": "mpremote",
-            "args": [{
-                "value": "${input:INPUT_Copy}",
-                "quoting": "escape"
-            }],
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": true,
-                "panel": "shared",
-                "showReuseMessage": false,
-                "clear": false
-            },
-            "problemMatcher": [],
-        },
-
-        {
-            "label": "mpRemote: WL_SCAN",
-            "type": "shell",
-            "command": "mpremote repl wl_scan",
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": true,
-                "panel": "shared",
-                "showReuseMessage": false,
-                "clear": false
-            },
-            "problemMatcher": [],
-        },
 
         {
             "label": "mpRemote: FS",
@@ -147,7 +111,35 @@
             // "dependsOrder": "sequence",
             // "dependsOn":["mpRemote: FS"],
         },
-    {
+
+        {
+            "label": "mpRemote: FS: CP: To",
+            "type": "shell",
+            "command":"mpremote",
+            "args": [{
+                "value": "cp",
+                "quoting": "escape"
+                },
+                {
+                    "value": "${input:INPUT_Fs_StringCp}",
+                    "quoting": "escape"
+                },
+                {
+                    "value": ":${input:INPUT_Fs_To_Name}",
+                    "quoting": "escape"
+                },
+            ],
+            "presentation": {
+                "echo":false ,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+        },
+
+        {
         "label": "mpRemote: rm2",
         "type": "shell",
         "presentation": {
@@ -160,7 +152,47 @@
         },
         "dependsOn":["mpRemote: FS", "mpRemote: FS: RM"],
         "dependsOrder": "sequence"
-    }    
+    },
+
+    {
+        "label": "mpRemote: copy",
+        "type": "shell",
+        "presentation": {
+            "echo": false,
+            "reveal": "always",
+            "focus": false,
+            "panel": "shared",
+            "showReuseMessage": true,
+            "clear": true
+        },
+        "dependsOn":["mpRemote: ls", "mpRemote: FS: CP: To"],
+        "dependsOrder": "sequence"
+    },
+
+    {
+        "label": "mpRemote: Run",
+        "type": "shell",
+        "command":"mpremote",
+        "args": [
+            {
+                "value": "run",
+                "quoting": "escape"
+            },
+            {
+                "value": "${file}",
+                "quoting": "escape"
+            }
+        ],
+        "presentation": {
+            "echo": true,
+            "reveal": "always",
+            "focus": true,
+            "panel": "dedicated",
+            "showReuseMessage": false,
+            "clear": false,
+        },
+    },
+
     ],
 // INPUT SECTION        
     "inputs": [
@@ -220,6 +252,18 @@
     {
         "id": "INPUT_Fs_String",
         "description": "NAME of file to REMOVE from device!",
+        "type": "promptString",
+    },
+
+    {
+        "id": "INPUT_Fs_StringCp",
+        "description": "NAME of file to COPY to DEVICE!",
+        "type": "promptString",
+    },
+
+    {
+        "id": "INPUT_Fs_To_Name",
+        "description": "NAME to COPY to DEVICE!",
         "type": "promptString",
     }
     ]

@@ -9,8 +9,11 @@ bitwise_and_bytes = BitWisePlay.bitwise_and_bytes
 
 count = 0
 
-clk = 21
-dt = 19
+clk = 37
+dt = 36
+
+
+
 pin_clock = Pin(clk, Pin.IN)
 pin_dt = Pin(dt, Pin.IN)
 hold = [[],[]]
